@@ -1,0 +1,21 @@
+-- Guild Missions System for Roblox RPG Game
+
+local module = {}
+
+-- Function to create a guild mission
+function module.createGuildMission(guild, missionName, missionData)
+    -- Guild mission creation logic
+    local mission = Instance.new("Folder")
+    mission.Name = missionName
+    mission.Parent = guild
+
+    -- Set guild mission attributes
+    for attribute, value in pairs(missionData) do
+        local attr = Instance.new("StringValue")
+        attr.Name = attribute
+        attr.Value = value
+        attr.Parent = mission
+    end
+end
+
+return module
